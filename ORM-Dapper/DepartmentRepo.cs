@@ -27,5 +27,11 @@ namespace ORM_Dapper
             _connection.Execute("INSERT INTO departments (Name) VALUES (@department);",
             new { department });
         }
+
+        public void DeleteDepartment(int departmentID)
+        {
+            _connection.Execute("DELETE FROM departments WHERE DepartmentID = @departmentID;",
+                new { departmentID });
+        }
     }
 }
